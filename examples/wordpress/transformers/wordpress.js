@@ -1,4 +1,4 @@
-import Rx from 'rxjs';
+import Rx from 'rxjs'
 
 export default (item) => {
   return Rx.Observable.of(item)
@@ -6,7 +6,7 @@ export default (item) => {
       item['atom:id']['#'],
       {
         title: item['atom:title']['#'],
-        content: item['atom:content']['#'],
+        content: item['atom:content']['#']
       }
     ]))
 }

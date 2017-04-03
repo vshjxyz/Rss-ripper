@@ -1,7 +1,7 @@
 {
   "name": "rss-ripper",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/rss-ripper.js",
   "author": "Luca Del Bianco",
   "license": "MIT",
   "scripts": {
@@ -15,5 +15,11 @@
     "level": "^1.6.0",
     "request": "^2.81.0",
     "rxjs": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1"
   }
 }

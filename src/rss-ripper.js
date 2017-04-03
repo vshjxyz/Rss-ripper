@@ -1,24 +1,20 @@
-import feedReaderStream from './streams/feed-reader.stream';
-import levelDbWriteStream from './streams/write.stream';
-import passThroughTransformer from './transformers/pass-through';
-import Feedparser from 'feedparser';
-import Rx from 'rxjs';
-
-const parser = new Feedparser();
+import feedReaderStream from './streams/feed-reader.stream'
+import levelDbWriteStream from './streams/write.stream'
+import passThroughTransformer from './transformers/pass-through'
 
 class RssRipper {
-  constructor(extractor = passThroughTransformer) {
-    this.extractor = extractor;
+  constructor (extractor = passThroughTransformer) {
+    this.extractor = extractor
   }
 
-  rip(url) {
+  rip (url) {
     return feedReaderStream(url)
       .flatMap(this.extractor)
       .flatMap(([id, item]) =>
         levelDbWriteStream(id, item)
           .map(() => [url, id, item])
-      );
+      )
   }
 }
 
-export default RssRipper;
+export default RssRipper
