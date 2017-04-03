@@ -5,6 +5,7 @@
   "author": "Luca Del Bianco",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint --fix src/*",
     "examples:wordpress": "node examples/wordpress.js"
   },
   "dependencies": {
