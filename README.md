@@ -20,7 +20,14 @@ Usage
 
 ```javascript
 const defaultRipper = new RssRipper();
-defaultRipper.rip('http://my-feed-url.com');
+const myFeedStream = defaultRipper.rip('http://my-feed-url.com');
+myFeedStream.subscribe(([url, id, item]) => {
+  // At this point the library has successfully retrieved an item and stored it to levelDB
+  
+  // We receive the ripped url, the id that has been 
+  // saved to levelDB and the item itself
+  console.log(`Saved item with id ${id} from ${url}: ${item}`);
+})
 ```
 
 #### Transformers
