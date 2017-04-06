@@ -5,13 +5,16 @@
   "author": "Luca Del Bianco",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --fix src/*",
+    "lint": "eslint --fix src/* examples/*",
+    "examples:ansa": "node examples/ansa.js",
+    "examples:bufale-net": "node examples/bufale-net.js",
     "examples:wordpress": "node examples/wordpress.js"
   },
   "dependencies": {
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-stage-0": "^6.22.0",
     "babel-register": "^6.24.0",
+    "bayes": "^0.0.6",
     "feedparser": "^2.1.0",
     "level": "^1.6.0",
     "request": "^2.81.0",
