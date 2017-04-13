@@ -1,4 +1,7 @@
-import Rx from 'rxjs'
 import db from '../db'
 
-export default Rx.Observable.bindCallback(db.put.bind(db))
+export default (key, value) => {
+  return db.flatMap((pool) =>
+    pool.query('UPSERT INTO news (id, value) VALUES ($1, $2)', [key, value])
+  )
+}

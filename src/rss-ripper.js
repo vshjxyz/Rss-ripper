@@ -1,5 +1,5 @@
 import feedReaderStream from './streams/feed-reader.stream'
-import levelDbWriteStream from './streams/write.stream'
+import cockroachDbWriteStream from './streams/write.stream'
 import passThroughTransformer from './transformers/pass-through'
 
 class RssRipper {
@@ -11,7 +11,7 @@ class RssRipper {
     return feedReaderStream(url)
       .flatMap(this.extractor)
       .flatMap(([id, item]) =>
-        levelDbWriteStream(id, item)
+        cockroachDbWriteStream(id, item)
           .map(() => [url, id, item])
       )
   }

@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint --fix src/* examples/*",
-    "examples:ansa": "node examples/ansa.js",
+    "examples:ansa": "iron-node examples/ansa.js",
     "examples:bufale-net": "node examples/bufale-net.js",
     "examples:wordpress": "node examples/wordpress.js"
   },
@@ -17,6 +17,7 @@
     "bayes": "^0.0.6",
     "feedparser": "^2.1.0",
     "level": "^1.6.0",
+    "pg": "^6.1.5",
     "request": "^2.81.0",
     "rxjs": "^5.2.0"
   },
