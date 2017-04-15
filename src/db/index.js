@@ -2,6 +2,8 @@ import DB_CONFIG from '../constants/db'
 import Rx from 'rxjs'
 import pg from 'pg'
 
+console.log('Trying to connect using ', JSON.stringify(DB_CONFIG))
+
 const pool = new pg.Pool(DB_CONFIG)
 
 pool.on('error', (err, client) => {
