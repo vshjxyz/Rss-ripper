@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint --fix src/* examples/*",
-    "examples:ansa": "iron-node examples/ansa.js",
+    "examples:ansa": "node examples/ansa.js",
     "examples:bufale-net": "node examples/bufale-net.js",
     "examples:wordpress": "node examples/wordpress.js"
   },
