@@ -1,4 +1,4 @@
-require('babel-register');
-const matcher = require('./src/matcher').default;
+require('babel-register')
+const matcher = require('./src/matcher').default
 
-matcher();
+matcher(process.argv.slice(2).pop())
